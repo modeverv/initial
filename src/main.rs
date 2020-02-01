@@ -35,8 +35,8 @@ fn main() {
         },
         "udp" => match role {
             "server" => {
-                unimplemented!();
-                // TODO UDPサーバー
+                //unimplemented!();
+                udp_server::serve(address).unwrap_or_else(|e|error!("{}",e));
             }
             "client" => {
                 unimplemented!();
