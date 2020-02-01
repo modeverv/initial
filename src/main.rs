@@ -39,8 +39,8 @@ fn main() {
                 udp_server::serve(address).unwrap_or_else(|e|error!("{}",e));
             }
             "client" => {
-                unimplemented!();
-                // TODO UDPクライアント
+                //unimplemented!();
+                udp_client::communication(address).unwrap_or_else(|e| error!("{}",e));
             }
             _ => {
                 missing_role();
