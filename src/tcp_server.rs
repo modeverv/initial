@@ -28,7 +28,7 @@ fn handler(mut stream: TcpStream) -> Result<(),failure::Error> {
             debug!("Connection closed.");
             return Ok(());
         }
-        println!("{}", str::from_utf8(&buffer[..nbytes])?);
+        print!("{}", str::from_utf8(&buffer[..nbytes])?);
         stream.write_all(&buffer[..nbytes])?;
     }
 }

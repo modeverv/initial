@@ -16,6 +16,6 @@ pub fn connect(address: &str) -> Result<(),failure::Error> {
         let mut reader = BufReader::new(&stream);
         let mut buffer = Vec::new();
         reader.read_until(b'\n', &mut buffer)?;
-        println!("{}",str::from_utf8(&buffer)?);
+        print!("{}",str::from_utf8(&buffer)?);
     }
 }
